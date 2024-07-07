@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #fff
+}
+
+.title{
+    padding-left: 612px;
+}
+
+main {
+    height: 100vh;
+    background-color: #fff
+}
+
+
+.container_principal{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
+    height: 850px;
+    gap: 10px;
+    background-color: #fff; 
+    padding: 10px; 
+    overflow: hidden;
+}
+
+
+.item{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 20px ;
+    background-color: blueviolet;
+    justify-content: center;
+    border: 2px solid #fff;
+    border-radius: 32px;
+}
+
+.item:first-child{
+    width: 75%;
+
+}
+
+.item:last-child{
+    width: 25%;
+
+}
+
+.input-text{
+    box-sizing: border-box;
+    margin: 2rem;
+    height: 500px;
+    font-size: 32px;
+    /* Para centrar el texto verticalmente */
+    display: flex;
+    align-items: center;
+    
+    /* Para centrar el texto horizontalmente */
+    text-align: center;
+    
+    /* Si quieres que el cursor también empiece en el centro */
+    padding: 0;
+}
+
+.item-principal{
+    
+}
+
+.container-btns{
+    display: flex;
+    margin: 30px 20px;
+    justify-content: center;
+    
+}
+.btn-encrip{
+    width: 328px;
+    height: 67px;
+    margin: 0px 20px;
+    background-color: #0A3871;
+    color: #fff;
+    border-radius: 24px;
+    border: 1px;
+}
+.btn-desenc{
+    width: 328px;
+    height: 67px;
+    margin: 0px 20px;
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    
+}
+
+.container-res{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
