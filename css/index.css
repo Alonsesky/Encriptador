@@ -1,3 +1,12 @@
+:root{
+    --fuente-principal:'Inter', sans-serif;
+    --color-principal:blueviolet;
+    --color-claro:#fff;
+    --color-secundario:#0A3871;
+    --color-terciario:#1004b4;
+    --color-neutro:#000000;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -9,16 +18,19 @@ header {
     justify-content: baseline;
     align-items: center;
     padding: 0.5rem;
-    background-color: #fff
+    background-color: var(--color-claro);
+    font-family: var(--fuente-principal);
 }
 
 .title{
     padding-left: 612px;
+    color: var(--color-principal);
+    font-size: 2.5rem;
 }
 
 main {
     height: 100vh;
-    background-color: #fff
+    background-color: var(--color-claro);
 }
 
 
@@ -29,9 +41,10 @@ main {
     justify-content: center;
     height: 850px;
     gap: 10px;
-    background-color: #fff; 
+    background-color: var(--color-claro);
     padding: 10px; 
     overflow: hidden;
+    
 }
 
 
@@ -40,10 +53,11 @@ main {
     display: flex;
     flex-direction: column;
     margin: 30px 20px ;
-    background-color: blueviolet;
+    background-color: var(--color-principal);
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-claro);
     border-radius: 32px;
+    font-family: var(--fuente-principal);
 }
 
 .item:first-child{
@@ -61,18 +75,9 @@ main {
     margin: 2rem;
     height: 500px;
     font-size: 32px;
-    /* Para centrar el texto verticalmente */
     display: flex;
     align-items: center;
-    
-    /* Para centrar el texto horizontalmente */
     text-align: center;
-    
-    /* Si quieres que el cursor también empiece en el centro */
-    padding: 0;
-}
-
-.item-principal{
     
 }
 
@@ -80,26 +85,42 @@ main {
     display: flex;
     margin: 30px 20px;
     justify-content: center;
-    
 }
+
 .btn-encrip{
     width: 328px;
     height: 67px;
     margin: 0px 20px;
     background-color: #0A3871;
-    color: #fff;
+    color: var(--color-claro);
     border-radius: 24px;
     border: 1px;
+    font-family: var(--fuente-principal);
 }
+
+button.btn-encrip:hover {
+    background-color:  var(--color-terciario);
+    color: var(--color-claro);
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .btn-desenc{
     width: 328px;
     height: 67px;
     margin: 0px 20px;
-    background-color: #D8DFE8;
+    background-color: var(--color-claro);
     color: #0A3871;
     border-radius: 24px;
     border: 1px solid #0A3871;
-    
+    font-family: var(--fuente-principal);
+}
+
+button.btn-desenc:hover {
+    background-color:  var(--color-neutro);
+    color: var(--color-claro);
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
 .container-res{
