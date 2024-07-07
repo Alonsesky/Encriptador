@@ -15,14 +15,14 @@
     <main class="container">
         <section class="container_principal">
             <div class="item item-principal">
-                <input class="input-text" type="text" value="Ingrese algún texto" onclick="borrarTexto(this)">
+                <textarea class="input-text" id="input-text" onclick="borrarTexto(this)">Ingrese algún texto</textarea>
                 <section class="container-btns">
-                    <button class="btn-encrip">Encriptador</button>
-                    <button class="btn-desenc">Desencriptar</button>
+                    <button id="btn-encrip" class="btn-encrip">Encriptador</button>
+                    <button id="btn-desenc" class="btn-desenc">Desencriptar</button>
                 </section>
             </div>
             <div class="item res">
-                <div class="container-res">
+                <div class="container-res" id="container-res">
                     <img src="../img/Muñeco.png" alt="area sin actividad">
                     <h2>Ningún mensaje fue encontrado</h2>
                     <p>Ingresa el texto que desees encriptar o desencriptar!.</p>

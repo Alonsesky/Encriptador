@@ -74,11 +74,16 @@ main {
     box-sizing: border-box;
     margin: 2rem;
     height: 500px;
+    font-family: var(--fuente-principal);
     font-size: 32px;
     display: flex;
-    align-items: center;
-    text-align: center;
-    
+    align-items: flex-start; 
+    text-align: left;
+    padding: 10px; 
+    resize: vertical; 
+    overflow-y: auto; 
+    white-space: pre-wrap;
+    word-wrap: break-word; 
 }
 
 .container-btns{
@@ -96,6 +101,7 @@ main {
     border-radius: 24px;
     border: 1px;
     font-family: var(--fuente-principal);
+    font-size: larger;
 }
 
 button.btn-encrip:hover {
@@ -114,6 +120,7 @@ button.btn-encrip:hover {
     border-radius: 24px;
     border: 1px solid #0A3871;
     font-family: var(--fuente-principal);
+    font-size: larger;
 }
 
 button.btn-desenc:hover {
@@ -123,9 +130,53 @@ button.btn-desenc:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
-.container-res{
+.item .res{
+    position: absolute;
+}
+.container-res {
+    position: relative;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+/*Variables creadas en la funcion agregarElemento*/
+.valorFinal {
+    font-size: 2rem;
+    box-sizing: border-box;
+    margin: 1.5rem;
+    height: 18em;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 1rem; 
+    max-width: 90%;
+}
+
+.tituloValorFinal{
+    color: var(--color-claro);
+}
+
+.btn-copiar{
+    width: 250px;
+    height: 67px;
+    margin: 0px 20px;
+    background-color: var(--color-claro);
+    color: var(--color-principal);
+    border-radius: 24px;
+    border: 1px;
+    font-family: var(--fuente-principal);
+    font-size: larger;
+}
+
+button.btn-copiar:hover {
+    background-color:  var(--color-principal);
+    color: var(--color-claro);
+    transform: scale(1.05); 
+    border: 2px solid #fff;
+}
+/*-----------------------------------*/
