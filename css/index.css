@@ -18,8 +18,14 @@ header {
     justify-content: baseline;
     align-items: center;
     padding: 0.5rem;
+    margin-top: 1%;
     background-color: var(--color-claro);
     font-family: var(--fuente-principal);
+}
+
+header img {
+    max-width: 100px;
+    margin-right: 1rem;
 }
 
 .title{
@@ -29,7 +35,7 @@ header {
 }
 
 main {
-    height: 100vh;
+    height: 90vh;
     background-color: var(--color-claro);
 }
 
@@ -40,7 +46,7 @@ main {
     flex-direction: row;
     justify-content: center;
     height: 850px;
-    gap: 10px;
+    gap: 1rem;
     background-color: var(--color-claro);
     padding: 10px; 
     overflow: hidden;
@@ -52,12 +58,13 @@ main {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin: 30px 20px ;
+    margin: 30px 10px ;
     background-color: var(--color-principal);
     justify-content: center;
     border: 2px solid var(--color-claro);
     border-radius: 32px;
     font-family: var(--fuente-principal);
+    width: 100%;
 }
 
 .item:first-child{
@@ -75,11 +82,12 @@ main {
     margin: 2rem;
     height: 500px;
     font-family: var(--fuente-principal);
+    color: var(--color-secundario);
     font-size: 32px;
     display: flex;
     align-items: flex-start; 
     text-align: left;
-    padding: 10px; 
+    padding: 0.5rem; 
     resize: vertical; 
     overflow-y: auto; 
     white-space: pre-wrap;
@@ -96,7 +104,7 @@ main {
     width: 328px;
     height: 67px;
     margin: 0px 20px;
-    background-color: #0A3871;
+    background-color: var(--color-secundario);
     color: var(--color-claro);
     border-radius: 24px;
     border: 1px;
@@ -116,9 +124,9 @@ button.btn-encrip:hover {
     height: 67px;
     margin: 0px 20px;
     background-color: var(--color-claro);
-    color: #0A3871;
+    color: var(--color-secundario);
     border-radius: 24px;
-    border: 1px solid #0A3871;
+    border: 1px solid var(--color-secundario);
     font-family: var(--fuente-principal);
     font-size: larger;
 }
@@ -146,15 +154,16 @@ button.btn-desenc:hover {
 .valorFinal {
     font-size: 2rem;
     box-sizing: border-box;
-    margin: 1.5rem;
-    height: 18em;
+    margin: 1rem;
+    height: 19em;
+    color: var(--color-secundario);
+    font-family: var(--fuente-principal);
     font-size: 32px;
     display: flex;
-    align-items: center;
-    text-align: center;
     justify-content: center;
-    padding: 0 1rem; 
+    padding: 0.9rem 2rem; 
     max-width: 90%;
+    border-radius: 24px;
 }
 
 .tituloValorFinal{
@@ -180,3 +189,72 @@ button.btn-copiar:hover {
     border: 2px solid #fff;
 }
 /*-----------------------------------*/
+/*Ajuste para hacer responsive*/
+
+@media (max-width: 1024px) {
+    .title {
+        padding-left: 1rem;
+        font-size: 2rem;
+    }
+
+    .container_principal {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .item:first-child,
+    .item:last-child {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .input-text {
+        height: 300px;
+    }
+
+    .container-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-encrip,
+    .btn-desenc,
+    .btn-copiar {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .valorFinal {
+        height: auto;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title {
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+
+    .input-text {
+        font-size: 24px;
+    }
+
+    .btn-encrip,
+    .btn-desenc,
+    .btn-copiar {
+        width: 90%;
+        font-size: medium;
+    }
+
+    .container-res{
+        padding: 2rem;
+    }
+}
+
+/*--------------------------------*/

@@ -1,31 +1,38 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
     
     //Accion para el boton ENCRIPTAR
     const btn_encrip = document.getElementById('btn-encrip');
     btn_encrip.addEventListener('click', function() {
-        borrarElementos('container-res');
-
         inputContenido = obtenerInfo("input-text");
         let valorTexto = validarTexto(inputContenido);
         if (valorTexto == true) {
+            borrarElementos('container-res');
             let datoEncriptado = encriptarTexto(inputContenido);
             agregarElemento('container-res',datoEncriptado);
+            // identificamos el contenido del textarea
+            const textarea = document.getElementById("input-text");
+            // Borramos el contenido del textarea
+            textarea.value = '';
+        } else {
+            alert("El texto no puede estar vacio");
         }
     });
     
     //Accion para el boton DESENCRIPTAR
     const btn_desencrip = document.getElementById('btn-desenc');
     btn_desencrip.addEventListener('click', function() {
-        borrarElementos('container-res');
         inputContenido = obtenerInfo("input-text");
-        let valorReinvertido = desencriptarTexto(inputContenido);
-        agregarElemento('container-res',valorReinvertido);
+        let valorTexto = validarTexto(inputContenido);
+        if (valorTexto == true) {
+            borrarElementos('container-res');
+            inputContenido = obtenerInfo("input-text");
+            let valorReinvertido = desencriptarTexto(inputContenido);
+            agregarElemento('container-res',valorReinvertido);
+        }else {
+            alert("El texto no puede estar vacio");
+        } 
     });
-
-    // Accion para el boton COPIAR
-    
     
 });//FIN DE EVENT LISTENING
 
@@ -54,13 +61,14 @@ function agregarElemento(idDiv, valor) {
     h2.className = 'tituloValorFinal';
     div.appendChild(h2);
     
-    // Crear y agregar el input
-    var input = document.createElement("textarea");
-    input.value = valor;
+    // Crear y agregar el text
+    var text = document.createElement("textarea");
+    text.value = valor;
+    text.readOnly = true;
     // Definir las clases directamente
     var clases = ['valorFinal'];
-    input.className = clases.join(' ');
-    div.appendChild(input);
+    text.className = clases.join(' ');
+    div.appendChild(text);
 
     // Crear button de copiar
     var btnCopiar = document.createElement("button");
@@ -70,12 +78,10 @@ function agregarElemento(idDiv, valor) {
 
     //EVENTO DE BUTTON COPIAR
     btnCopiar.addEventListener('click', function() {
-        // Seleccionar el texto del input
-        input.select();
-        input.setSelectionRange(0, 99999);
-
+        text.select();
+        text.setSelectionRange(0, 99999);
         // Copiar el texto al portapapeles
-        navigator.clipboard.writeText(input.value)
+        navigator.clipboard.writeText(text.value)
             .then(() => {            
                 btnCopiar.textContent = "¡Copiado!";
                 setTimeout(() => {
@@ -86,6 +92,8 @@ function agregarElemento(idDiv, valor) {
                 console.error('Error al copiar el texto: ', err);
             });
     });
+
+    
 }
 
 //Verificar si en el input principal contiene info
@@ -98,7 +106,7 @@ function obtenerInfo(idDiv) {
 // Verificar texto ingresado sea valido
 
 function validarTexto(texto) {
-    if (inputContenido != 'Ingrese algún texto') {
+    if (inputContenido != 'Ingrese algún texto' && inputContenido!='') {
         return true
     } else {
         return false
